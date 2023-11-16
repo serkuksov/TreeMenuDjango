@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "treemenudjango"
+version = "0.1.0"
+description = ""
+authors = ["KuksovSV <ser.kuksov@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.7"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.1"
+black = "^23.10.0"
+mypy = "^1.6.1"
+pre-commit = "^3.5.0"
+django-stubs = "^4.2.5"
+django-stubs-ext = "^4.2.5"
+
+[tool.poetry.group.test.dependencies]
+coverage = "^7.3.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+mypy_path = "app"
+explicit_package_bases = true
+plugins = ["mypy_django_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "config.settings"
+
+[tool.coverage.paths]
+source = [
+    "app/",
+    ]
+
+[tool.coverage.run]
+omit = [
+    "*/migrations/*",
+    "*/tests/*",
+    "*/manage.py",
+    "*/settings.py"
+    ]
