@@ -1,3 +1,5 @@
+[![Build Statys](https://github.com/serkuksov/treemenudjango/actions/workflows/checks.yml/badge.svg?branch=master)](https://github.com/serkuksov/treemenudjango/actions/workflows/checks.yml)
+
 # TreeMenuDjango
 
 TreeMenuDjango - это Django-приложение для создания и отображения древовидных меню выполненое в рамках тестового задания.
@@ -48,4 +50,3 @@ TreeMenuDjango - это Django-приложение для создания и �
 ## Лицензия
 
 TreeMenuDjango распространяется под лицензией [MIT](LICENSE.md).
-
