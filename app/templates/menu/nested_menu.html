@@ -1,0 +1,24 @@
+<ul class="list-group">
+  {% for elm in filtered_tree_menu_data %}
+    <li class="list-group-item {% if menu_item_id == elm.menu_item.id %}list-group-item-light{% endif %}">
+        {% if menu_item_id != elm.menu_item.id %}
+            <a href="?{{ slug_menu }}={{ elm.menu_item.id }}&{{ params_url }}">
+                {% if elm.children %}
+                    -
+                {% else %}
+                    +
+                {% endif %}
+            </a>
+
+        {% endif %}
+        {% if elm.menu_item.url %}
+            <a href="{{ elm.menu_item.url }}">{{ elm.menu_item.title }}</a>
+        {% else %}
+            {{ elm.menu_item.title }}
+        {% endif %}
+        {% if elm.children %}
+            {% include "menu/nested_menu.html" with filtered_tree_menu_data=elm.children %}
+        {% endif %}
+    </li>
+  {% endfor %}
+</ul>

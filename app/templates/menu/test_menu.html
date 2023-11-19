@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Тестовая страница с меню</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load menu %}
 
-</body>
-</html>
+{% block title %} Тестовая страница с меню {% endblock %}
+
+{% block content %}
+
+    {% draw_menu 'kategorii-tovarov' %}
+    {% draw_menu 'blyuda' %}
+
+{% endblock %}
